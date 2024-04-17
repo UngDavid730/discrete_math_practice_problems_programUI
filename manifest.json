@@ -1,0 +1,8 @@
+{"name": "DMPP",
+"short_name": "DMPP",
+"start_url": "./?home=true",
+"icons": [],
+"theme_color": "#000000",
+"background_color": "#FFFFFFF",
+"display": "fullscreen",
+"orientation": "portrait"}
