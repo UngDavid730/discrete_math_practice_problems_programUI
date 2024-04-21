@@ -5,165 +5,144 @@
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></head>
+<link rel="stylesheet" href="/style.css">
 <body>
-<h1> Set Theory selector</h1>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#setModal">
-    Set Theory Button
-</button>
-<h1> Logic Theory Selector</h1>
+
 
 <!-- Modal -->
-<div class="modal fade" id="setModal" tabindex="-1" role="dialog" aria-labelledby="setModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="setModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Set Theory Skills: </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- AS check we want to check for this first-->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                <h5 class="modal-title" id="setTitle">Set Theory:
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input testOptions" type="checkbox" value="as" id="as">
+                    <label class="form-check-label" for="as">
                         AS
                     </label>
                 </div>
-                <hr>
+                </h5>
+            </div>
+            <div class="modal-body">
+                <!-- AS check we want to check for this first-->
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="vd" value="option1">
+                    <input class="form-check-input testOptions" type="checkbox" id="vd" value="vd">
                     <label class="form-check-label" for="vd">VD</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="bd" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="bd" value="bd">
                     <label class="form-check-label" for="bd">BD</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="db" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="db" value="db">
                     <label class="form-check-label" for="db">DB</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="so" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="so" value="so">
                     <label class="form-check-label" for="so">SO</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="rn" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="rn" value="rn">
                     <label class="form-check-label" for="rn">RN</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="ca" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="ca" value="ca">
                     <label class="form-check-label" for="ca">CA</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="ps" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="ps" value="ps">
                     <label class="form-check-label" for="ps">PS</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="dm" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="dm" value="dm">
                     <label class="form-check-label" for="dm">DM</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="sb" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="sb" value="sb">
                     <label class="form-check-label" for="sb">SB</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="ss" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="ss" value="oss">
                     <label class="form-check-label" for="ss">SS</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="v2" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="v2" value="v2">
                     <label class="form-check-label" for="v2">V2</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="v3" value="option2">
+                    <input class="form-check-input testOptions" type="checkbox" id="v3" value="v3">
                     <label class="form-check-label" for="v3">V3</label>
                 </div>
             </div>
+
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm Selection</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="logicModal" tabindex="-1" role="dialog" aria-labelledby="logicModal" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Set Theory Skills: </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <!-- AS check we want to check for this first-->
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    AS
-                </label>
-            </div>
-            <hr>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="vd" value="option1">
-                <label class="form-check-label" for="vd">VD</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="bd" value="option2">
-                <label class="form-check-label" for="bd">BD</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="db" value="option2">
-                <label class="form-check-label" for="db">DB</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="so" value="option2">
-                <label class="form-check-label" for="so">SO</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="rn" value="option2">
-                <label class="form-check-label" for="rn">RN</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="ca" value="option2">
-                <label class="form-check-label" for="ca">CA</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="ps" value="option2">
-                <label class="form-check-label" for="ps">PS</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="dm" value="option2">
-                <label class="form-check-label" for="dm">DM</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="sb" value="option2">
-                <label class="form-check-label" for="sb">SB</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="ss" value="option2">
-                <label class="form-check-label" for="ss">SS</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="v2" value="option2">
-                <label class="form-check-label" for="v2">V2</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="v3" value="option2">
-                <label class="form-check-label" for="v3">V3</label>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+
+
+<div class="row g-3">
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#setModal">
+            Select Category
+        </button>
+    </div>
+    <div class="col-auto">
+        <input class="form-control" id="numQuestions" placeholder="Number of Questions">
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary" onclick="main();">
+            Test
+        </button>
     </div>
 </div>
+
+<div id="questionBody">
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
@@ -173,8 +152,7 @@
             navigator.serviceWorker.register('/service-worker.js');
         }
     </script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

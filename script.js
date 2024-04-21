@@ -1,5 +1,27 @@
 function main(){
+    selection = getSelection();
+    console.log(selection);
+    let numberOfQuestion = document.getElementById("numQuestions").value;
+    console.log(numberOfQuestion)
+}
 
+function genQuestions(selection){
+    questions = []
+}
+function getSelection(){
+    let selectedOptions = document.getElementsByClassName("testOptions");
+    let selection = [];
+    if(!selectedOptions[0].checked){
+        for(let i = 1; i<selectedOptions.length;i++) {
+            if (selectedOptions[i].checked) {
+                selection.push(selectedOptions[i].value);
+            }
+        }
+    }
+    else{
+        selection.push(selectedOptions[0].value);
+    }
+    return selection;
 }
 
 let vb = [
@@ -35,9 +57,4 @@ let bd = [
     ['What is the Disjunctive Normal Form of 000?','_An_Bn_C',fig_venn3,'dnf']
 ]
 
-
-
-
-
-main()
 
