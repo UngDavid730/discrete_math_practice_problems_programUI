@@ -59,7 +59,7 @@ function formHtml(questionData){
                 <div class="accordion-body">
                 <p>${question[0][0]}</p>
                     <img src ="${question[0][2]}">
-                    
+                    <input class="form-control" placeholder="Answer:">
                 </div>
             </div>
         </div>`
