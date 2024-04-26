@@ -1,25 +1,27 @@
 let bank = new Map();
+let correctAns = new Map();
 
 function seedBankMap() {
     bank.set(
         "vb",{
-            questions : [['What is the Bit Stream for section a?','100','../assets/a.png','abc'],
-                ['What is the Bit Stream for section b?','010','../assets/b.png','abc'],
-                ['What is the Bit Stream for section c?','001','../assets/c.png','abc'],
-                ['What is the Bit Stream for section d?','110','../assets/d.png','abc'],
-                ['What is the Bit Stream for section e?','101','../assets/e.png','abc'],
-                ['What is the Bit Stream for section f?','011','../assets/f.png','abc'],
-                ['What is the Bit Stream for section g?','111','../assets/g.png','abc'],
-                ['What is the Bit Stream for section h?','000','../assets/h.png','abc']],
+            questions : [['What is the Bit Stream for section a?','100','./assets/a.png','abc'],
+                ['What is the Bit Stream for section b?','010','./assets/b.png','abc'],
+                ['What is the Bit Stream for section c?','001','./assets/c.png','abc'],
+                ['What is the Bit Stream for section d?','110','./assets/d.png','abc'],
+                ['What is the Bit Stream for section e?','101','./assets/e.png','abc'],
+                ['What is the Bit Stream for section f?','011','./assets/f.png','abc'],
+                ['What is the Bit Stream for section g?','111','./assets/g.png','abc'],
+                ['What is the Bit Stream for section h?','000','./assets/h.png','abc']],
             type: "string"})
     console.log(bank.get("vb"));
 }
 seedBankMap();
+let questions = [];
 function main(){
 
     let selection = getSelection();
     let numberOfQuestions = document.getElementById("numQuestions").value;
-    let questions = genQuestions(selection,numberOfQuestions);
+    questions = genQuestions(selection,numberOfQuestions);
     let questionHtml = formHtml(questions);
     appendQuestions(questionHtml);
 
@@ -31,10 +33,12 @@ function genQuestions(selection,numberOfQuestions){
     let questions = []
     selection.forEach((para)=>{
         for(let i =0; i<(Number(numberOfQuestions)/selection.length);i++) {
+
             let currentBank = bank.get(para).questions;
             let randomInd = Math.floor(Math.random()*currentBank.length)
             questions.push([bank.get(para).questions[randomInd],para])
             currentBank.splice(randomInd,1);
+
         }
         }
     )
@@ -51,15 +55,21 @@ function formHtml(questionData){
              questionHtml += `
     <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#question${counter}" aria-expanded="false" aria-controls="question${counter}">
+                <button class="accordion-button collapsed accordion-color" type="button" data-bs-toggle="collapse" data-bs-target="#question${counter}" aria-expanded="false" aria-controls="question${counter}">
                     Question: ${counter} (${question[1]})
                 </button>
             </h2>
-            <div id="question${counter}" class="accordion-collapse collapse show" >
+            <div id="question${counter}" class="accordion-collapse collapse" >
                 <div class="accordion-body">
                 <p>${question[0][0]}</p>
-                    <img src ="${question[0][2]}">
-                    <input class="form-control" placeholder="Answer:">
+                    <img src ="${question[0][2]}" class="vennImg">
+                    
+                           <div class="input-group mb-3">
+                      <input id="answer${counter}" type="text" class="form-control" placeholder="Answer:" aria-label="Answer" aria-describedby="answer${counter}" >
+                      <button class="btn btn-outline-secondary" type="button" id="answer${counter}Button" onclick="validateQuestion('answer${counter}',${counter-1})">Submit</button>
+                       </div>
+       
+                   
                 </div>
             </div>
         </div>`
@@ -94,6 +104,18 @@ function getSelection(){
     return selection;
 }
 
+function validateQuestion(inputID,index){
+// we should be able to find the value of the answer based on what num of question(index)
+    let answer = document.getElementById(inputID).value;
+    let corAnswer = questions[index][0][1];
+    console.log(answer)
+    console.log(corAnswer)
+    if(answer == corAnswer){
+        let questionID = `#question${index+1}`;
+        console.log(questionID);
+        document.getElementById(questionID).classList;
+    }
+}
 
 
 

@@ -89,23 +89,38 @@
     </div>
 </div>
 
+<nav class="nav-justified fixed-top bg-body-tertiary header">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#setModal">
+                Categories
+            </button>
+        </li>
+        <li class="nav-item">
+            <input class="form-control" id="numQuestions" placeholder="Number of Questions">
+        </li>
+        <li class="nav-item">
+            <button type="button" class="btn btn-primary" onclick="main();">
+                Start
+            </button>
+        </li>
+    </ul>
+</nav>
 
 
-<div class="row g-3">
-    <div class="col-auto">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#setModal">
-            Select Category
-        </button>
-    </div>
-    <div class="col-auto">
-        <input class="form-control" id="numQuestions" placeholder="Number of Questions">
-    </div>
-    <div class="col-auto">
-        <button type="button" class="btn btn-primary" onclick="main();">
-            Test
-        </button>
-    </div>
-</div>
+<nav class="nav-justified  fixed-bottom bg-body-tertiary footer">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <button type="button" class="btn btn-primary" onclick="main();">
+                Finish
+            </button>
+        </li>
+    </ul>
+</nav>
+
+
+
+
 
 <div id="questionBody">
 
